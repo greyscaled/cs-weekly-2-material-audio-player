@@ -5,8 +5,12 @@ Implements Web Audio API to create a simple wave oscillator visualizer. Original
 See [MDN example](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Controlling_multiple_parameters_with_ConstantSourceNode)
 
 ## Demo
-![screenshot of demo](https://raw.githubusercontent.com/vapurrmaid/cs-weekly-2-material-audio-player/master/assets/demo.PNG)
+
 [LIVE DEMO](https://vapurrmaid.github.io/cs-weekly-2-material-audio-player/)
+
+
+![screenshot of demo](https://raw.githubusercontent.com/vapurrmaid/cs-weekly-2-material-audio-player/master/assets/demo.PNG)
+
 
 <a name="AudioPlayer"></a>
 
