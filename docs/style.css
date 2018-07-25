@@ -1,0 +1,171 @@
+/*
+ * style for Material Audio Player Demo
+ *
+ * Written By Vapurrmaid aka Grey B  under MIT license
+ *
+ * vapurrmaid@gmail.com
+ * https://github.com/vapurrmaid
+ * https://medium.com/@vapurrmaid
+ */
+
+/* app container */
+.app {
+  min-width: 280px;
+  max-width: 500px;
+}
+
+/* audio player container */
+#audioPlayer {
+  border: 1px solid grey;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+/* play/pause svg */
+#playButton {
+  height: 100px;
+  width: 100px;
+}
+
+/* visualizer canvas */
+#visualizer {
+  height: 100px;
+  width: 100%
+}
+
+/* play/pause btn outer group */
+.svg-audio-btn {
+  cursor: pointer;
+  fill: #eee;
+  stroke: #eee;
+  transition: fill .5s, stroke .5s;
+}
+
+.svg-audio-btn:hover {
+  fill: grey;
+  stroke: grey;
+}
+
+/* utility to swap play/pause */
+.hidden {
+  visibility: hidden;
+}
+
+/* slider controls------------------------------------*/
+
+/* 1st control */
+input[type=range]#wave1Control::-webkit-slider-thumb {
+  background-color: #26a69a;
+}
+
+input[type=range]#wave1Control::-moz-range-thumb {
+  background-color: #26a69a;
+}
+
+input[type=range]#wave1Control::-ms-thumb {
+  background-color: #26a69a;
+}
+
+/* 2nd control */
+input[type=range]#wave2Control::-webkit-slider-thumb {
+  background-color: #ec407a;
+}
+
+input[type=range]#wave2Control::-moz-range-thumb {
+  background-color: #ec407a;
+}
+
+input[type=range]#wave2Control::-ms-thumb {
+  background-color: #ec407a;
+}
+
+/* 3rd control */
+input[type=range]#wave3Control::-webkit-slider-thumb {
+  background-color: #29b6f6;
+}
+
+input[type=range]#wave3Control::-moz-range-thumb {
+  background-color: #29b6f6;
+}
+
+input[type=range]#wave3Control::-ms-thumb {
+  background-color: #29b6f6;
+}
+
+/* Volume COntrol------------------------------------------*/
+
+/* reset from materialize */
+input[type=range]#volumeControl {
+  -webkit-appearance: none;
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent;
+}
+
+/* set webkit thumb */
+input[type=range]#volumeControl::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: repeating-linear-gradient(
+    0deg,
+    #eee,
+    #eee 6px,
+    rgba(0, 0, 0, 0.5) 6px,
+    rgba(0, 0, 0, 0.5) 7px
+  );
+  border: 1px solid #000000;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1px #0d0d0d;
+  cursor: pointer;
+  height: 36px;
+  margin-top: -14px;
+  width: 16px;
+}
+
+
+/* set mozilla thumb*/
+input[type=range]#volumeControl::-moz-range-thumb {
+  background: repeating-linear-gradient(
+      0deg,
+      #eee,
+      #eee 6px,
+      rgba(0, 0, 0, 0.5) 6px,
+      rgba(0, 0, 0, 0.5) 7px
+    );
+    border: 1px solid #000000;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1px #0d0d0d;
+    cursor: pointer;
+    height: 35px;
+    margin-top: -14px;
+    width: 16px;
+}
+
+
+/* set webkit track */
+input[type=range]#volumeControl::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.7)
+  );
+
+  border-radius: 1.3px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6), 0 0 1px #0d0d0d;
+  cursor: pointer;
+  height: 9px;
+  width: 100%;
+}
+
+/* set mozilla track */
+input[type=range]#volumeControl::-moz-range-track {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.7)
+  );
+
+  border-radius: 1.3px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6), 0 0 1px #0d0d0d;
+  cursor: pointer;
+  height: 9px;
+  width: 100%;
+}

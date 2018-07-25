@@ -24,7 +24,8 @@
     "url": "git+https://github.com/vapurrmaid/cs-weekly-2-material-audio-player.git"
   },
   "scripts": {
-    "build": "webpack",
+    "clean": "rimraf docs/",
+    "build": "npm run clean && webpack && cp -r dist/ docs/ && rm dist/bundle.js",
     "dev": "webpack-dev-server",
     "doc": "jsdoc2md --template README.hbs --files src/audio-player.js > README.md",
     "lint": "eslint src/**"
