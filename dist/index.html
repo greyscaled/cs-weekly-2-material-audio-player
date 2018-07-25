@@ -1,0 +1,133 @@
+<!--
+Material Audio Player Demo
+
+Written By Vapurrmaid aka Grey B  under MIT license
+
+vapurrmaid@gmail.com
+https://github.com/vapurrmaid
+https://medium.com/@vapurrmaid
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Material Audio Player</title>
+</head>
+<body>
+  <noscript>You need to eable JavaScript to run this app.</noscript>
+  <div class="container app">
+    <!-- heading -->
+    <div class="row">
+      <div class="col s12">
+        <h1>Audio Player v0.1</h1>
+      </div>
+    </div>
+    <!-- audio player -->
+    <div id="audioPlayer">
+      <!-- audio player top - play/pause & visual -->
+      <div class="row" id="audioPlayer__top">
+        <!-- play/pause -->
+        <div class="col s5">
+          <svg
+            id="playButton"
+            height="200"
+            width="200"
+            viewbox="0 0 200 200"
+            preserveAspectRatio="xMidYMid meet"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:svg="http://www.w3.org/2000/svg">
+            <!-- .svg-audio-btn main group -->
+            <g class="svg-audio-btn">
+              <!-- bg -->
+              <circle
+                cx="50%"
+                cy="50%"
+                r="47.5%"
+                fill="transparent"
+                stroke-width="5%"/>
+              <!-- play triangle -->
+              <path
+                class="svg-audio-btn__play"
+                d="M 80 50
+                   L 80 150
+                   L 133.33 100"/>
+              <!-- pause group -->
+              <g class="svg-audio-btn__pauseGrp hidden">
+                <rect
+                  class="svg-audio-btn__pause"
+                  height="50%"
+                  width="5%"
+                  x="40%"
+                  y="25%"/>
+                <rect
+                  class="svg-audio-btn__pause"
+                  height="50%"
+                  width="5%"
+                  x="55%"
+                  y="25%"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <!-- visualizer -->
+        <div class="col s7">
+          <canvas id="visualizer" />
+        </div>
+      </div>
+      <!-- audio player bottom = slider -->
+      <div class="row" id="audioPlayer__bottom">
+        <div class="s12">
+          <input
+            data-f="1"
+            id="wave1Control"
+            name="wave1Control"
+            type="range"
+            min="-100.0"
+            max="100.0"
+            step="0.1"
+            value="0.0"/>
+        </div>
+        <div class="s12">
+          <input
+            data-f="2"
+            id="wave2Control"
+            name="wave2Control"
+            type="range"
+            min="-100.0"
+            max="100.0"
+            step="0.1"
+            value="0.0"/>
+        </div>
+        <div class="s12">
+          <input
+            data-f="3"
+            id="wave3Control"
+            name="wave3Control"
+            type="range"
+            min="-100.0"
+            max="100.0"
+            step="0.1"
+            value="0.0"/>
+          <input
+            id="volumeControl"
+            name="volumeControl"
+            type="range"
+            min="0.0"
+            max="1.0"
+            step="0.1"
+            value="0.5"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- webpack bundle -->
+  <script src="bundle.js"></script>
+</body>
+</html>
+
