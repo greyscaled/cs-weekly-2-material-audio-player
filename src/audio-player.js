@@ -21,9 +21,9 @@ class AudioPlayer {
    * @param {Object} opts - (required)
    * @param {Object} opts.ctx - (required) The AudioContext Object
    * @param {number} [opts.volume=0.5] - the overall volume
-   * @param {number} [opts.f1=65.41] - the frequency of wave 1
-   * @param {number} [opts.f2=82.41] - the frequency of wave 2
-   * @param {number} [opts.f3=98.0] - the frequency of wave 3
+   * @param {number} [opts.f1=130.81] - the frequency of wave 1
+   * @param {number} [opts.f2=164.81] - the frequency of wave 2
+   * @param {number} [opts.f3=196.00] - the frequency of wave 3
    * @returns {Object.<AudioPlayer>}
    */
   constructor (opts) {
@@ -31,23 +31,30 @@ class AudioPlayer {
     this.ctx = opts.ctx
 
     // Effects Nodes
-    this.gainNode = this.ctx.createGain()
+    this.gainNode1 = this.ctx.createGain()
+    this.gainNode2 = this.ctx.createGain()
+    this.gainNode3 = this.ctx.createGain()
     this.f1Analyzer = this.ctx.createAnalyser()
     this.f2Analyzer = this.ctx.createAnalyser()
     this.f3Analyzer = this.ctx.createAnalyser()
 
     // member Variables
-    this.mF1 = opts.f1 || 65.41
-    this.mF2 = opts.f2 || 82.41
-    this.mF3 = opts.f3 || 98.0
+    this.mF1 = opts.f1 || 130.81
+    this.mF2 = opts.f2 || 164.81
+    this.mF3 = opts.f3 || 196.00
     this.mPlaying = false
     this.mVolume = opts.volume || 0.5
+    this.mVolume = 0.33 * this.mVolume // adjust for 3 gains
 
     // set the Gain
-    this.gainNode.gain.value = this.mVolume
+    this.gainNode1.gain.value = this.mVolume
+    this.gainNode2.gain.value = this.mVolume
+    this.gainNode3.gain.value = this.mVolume
 
     // Connect the Graph of Nodes in the Ctx
-    this.gainNode.connect(this.ctx.destination)
+    this.gainNode1.connect(this.ctx.destination)
+    this.gainNode2.connect(this.ctx.destination)
+    this.gainNode3.connect(this.ctx.destination)
 
     // allow chaining
     return this
@@ -66,19 +73,19 @@ class AudioPlayer {
     this.oscNode1 = this.ctx.createOscillator()
     this.oscNode1.type = 'sine'
     this.oscNode1.frequency.value = this.mF1
-    this.oscNode1.connect(this.gainNode)
+    this.oscNode1.connect(this.gainNode1)
     this.oscNode1.connect(this.f1Analyzer)
 
     this.oscNode2 = this.ctx.createOscillator()
     this.oscNode2.type = 'sine'
     this.oscNode2.frequency.value = this.mF2
-    this.oscNode2.connect(this.gainNode)
+    this.oscNode2.connect(this.gainNode2)
     this.oscNode2.connect(this.f2Analyzer)
 
     this.oscNode3 = this.ctx.createOscillator()
     this.oscNode3.type = 'sine'
     this.oscNode3.frequency.value = this.mF3
-    this.oscNode3.connect(this.gainNode)
+    this.oscNode3.connect(this.gainNode3)
     this.oscNode3.connect(this.f3Analyzer)
 
     this.oscNode1.start()
@@ -109,8 +116,10 @@ class AudioPlayer {
    * @returns {undefined}
    */
   changeGain (volume) {
-    this.mVolume = volume
-    this.gainNode.gain.value = this.mVolume
+    this.mVolume = 0.33 * volume
+    this.gainNode1.gain.value = this.mVolume
+    this.gainNode2.gain.value = this.mVolume
+    this.gainNode3.gain.value = this.mVolume
   }
 
   /**
