@@ -34,9 +34,9 @@ See [MDN example](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
 | opts | <code>Object</code> |  | (required) |
 | opts.ctx | <code>Object</code> |  | (required) The AudioContext Object |
 | [opts.volume] | <code>number</code> | <code>0.5</code> | the overall volume |
-| [opts.f1] | <code>number</code> | <code>65.41</code> | the frequency of wave 1 |
-| [opts.f2] | <code>number</code> | <code>82.41</code> | the frequency of wave 2 |
-| [opts.f3] | <code>number</code> | <code>98.0</code> | the frequency of wave 3 |
+| [opts.f1] | <code>number</code> | <code>130.81</code> | the frequency of wave 1 |
+| [opts.f2] | <code>number</code> | <code>164.81</code> | the frequency of wave 2 |
+| [opts.f3] | <code>number</code> | <code>196.00</code> | the frequency of wave 3 |
 
 <a name="AudioPlayer+changeGain"></a>
 
