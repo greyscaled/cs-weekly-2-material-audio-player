@@ -1,6 +1,6 @@
 {
   "name": "material-audio-player-demo",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Implements Web Audio API to create a simple wave oscillator visualizer. Original designed classes and architecture, heavily inspired by the example on MDN docs.",
   "keywords": [
     "svg",
