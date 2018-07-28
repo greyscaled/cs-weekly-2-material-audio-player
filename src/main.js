@@ -25,9 +25,9 @@ function main () {
   const dF = 0.0 // inital delta frequency
   const volume = 0.5 // initial Volume -> (0.0, 1.0)
   const player = new AudioPlayer({ ctx, volume })
-  const f1visualData = new Uint8Array(player.getAnalyzerBinCount(1))
-  const f2visualData = new Uint8Array(player.getAnalyzerBinCount(2))
-  const f3visualData = new Uint8Array(player.getAnalyzerBinCount(3))
+  const f1visualData = new Uint8Array(player.getAnalyzerFFTSize(1))
+  const f2visualData = new Uint8Array(player.getAnalyzerFFTSize(2))
+  const f3visualData = new Uint8Array(player.getAnalyzerFFTSize(3))
   const playBtnStates = new ToggleButton({
     on: 'pause',
     off: 'play'
@@ -133,9 +133,9 @@ function main () {
 
     // now that we have the current Data for each wave, loop
     // through each and draw each point value
-    drawWave(player.getAnalyzerBinCount(1), '#26a69a', f1visualData)
-    drawWave(player.getAnalyzerBinCount(2), '#ec407a', f2visualData)
-    drawWave(player.getAnalyzerBinCount(3), '#29b6f6', f3visualData)
+    drawWave(player.getAnalyzerFFTSize(1), '#26a69a', f1visualData)
+    drawWave(player.getAnalyzerFFTSize(2), '#ec407a', f2visualData)
+    drawWave(player.getAnalyzerFFTSize(3), '#29b6f6', f3visualData)
 
     function drawWave (bufferLength, color, dataArray) {
       // draw the path - loop through
