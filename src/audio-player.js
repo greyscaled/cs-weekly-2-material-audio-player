@@ -34,9 +34,15 @@ class AudioPlayer {
     this.gainNode1 = this.ctx.createGain()
     this.gainNode2 = this.ctx.createGain()
     this.gainNode3 = this.ctx.createGain()
-    this.f1Analyzer = this.ctx.createAnalyser()
-    this.f2Analyzer = this.ctx.createAnalyser()
-    this.f3Analyzer = this.ctx.createAnalyser()
+    this.f1Analyzer = this.ctx.createAnalyser({
+      fftSize: 256
+    })
+    this.f2Analyzer = this.ctx.createAnalyser({
+      fftSize: 256
+    })
+    this.f3Analyzer = this.ctx.createAnalyser({
+      fftSize: 256
+    })
 
     // member Variables
     this.mF1 = opts.f1 || 130.81
@@ -145,8 +151,8 @@ class AudioPlayer {
 
   /**
    * Returns 1/2 the FFT value for a given source. Represents the number of
-   * data values for visualization. Use to assign the length of an unsigned
-   * 8-bit array (ie: Uint8Array [binCount])
+   * data values for visualization in the frequency domain.
+   * Use to assign the length of an unsigned 8-bit array (ie: Uint8Array [binCount])
    * @param {number} f - The frequency (1, 3) to obtain the bin count
    * @returns {number}
    */
@@ -155,6 +161,23 @@ class AudioPlayer {
       case 1: return this.f1Analyzer.frequencyBinCount
       case 2: return this.f2Analyzer.frequencyBinCount
       case 3: return this.f3Analyzer.frequencyBinCount
+      default: return 0
+    }
+  }
+
+  /**
+   * Returns the fftSize which is an unsigned long value
+   * and represents the window size in samples that is used
+   * when performing a Fast Fourier Transform.
+   * @param {number} f - The frequency (1, 3) for which to get
+   * the FFT size.
+   * returns {number} - an unsigned long
+   */
+  getAnalyzerFFTSize (f) {
+    switch (f) {
+      case 1: return this.f1Analyzer.fftSize
+      case 2: return this.f2Analyzer.fftSize
+      case 3: return this.f3Analyzer.fftSize
       default: return 0
     }
   }
