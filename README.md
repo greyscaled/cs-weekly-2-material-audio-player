@@ -22,6 +22,7 @@ See [MDN example](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
     * [.changeGain(volume)](#AudioPlayer+changeGain) ⇒ <code>undefined</code>
     * [.changeFrequency(f, df)](#AudioPlayer+changeFrequency) ⇒ <code>undefined</code>
     * [.getAnalyzerBinCount(f)](#AudioPlayer+getAnalyzerBinCount) ⇒ <code>number</code>
+    * [.getAnalyzerFFTSize(f)](#AudioPlayer+getAnalyzerFFTSize) ⇒ <code>number</code>
     * [.getAnalyzerTimeBytes(f, dataArray)](#AudioPlayer+getAnalyzerTimeBytes) ⇒ <code>undefined</code>
     * [.togglePlay()](#AudioPlayer+togglePlay) ⇒ <code>undefined</code>
 
@@ -64,13 +65,25 @@ Adjusts the value of a frequency.
 <a name="AudioPlayer+getAnalyzerBinCount"></a>
 
 ### audioPlayer.getAnalyzerBinCount(f) ⇒ <code>number</code>
-Returns 1/2 the FFT value for a given source. Represents the number ofdata values for visualization. Use to assign the length of an unsigned8-bit array (ie: Uint8Array [binCount])
+Returns 1/2 the FFT value for a given source. Represents the number ofdata values for visualization in the frequency domain.Use to assign the length of an unsigned 8-bit array (ie: Uint8Array [binCount])
 
 **Kind**: instance method of [<code>AudioPlayer</code>](#AudioPlayer)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | f | <code>number</code> | The frequency (1, 3) to obtain the bin count |
+
+<a name="AudioPlayer+getAnalyzerFFTSize"></a>
+
+### audioPlayer.getAnalyzerFFTSize(f) ⇒ <code>number</code>
+Returns the fftSize which is an unsigned long valueand represents the window size in samples that is usedwhen performing a Fast Fourier Transform.
+
+**Kind**: instance method of [<code>AudioPlayer</code>](#AudioPlayer)  
+**Returns**: <code>number</code> - - an unsigned long  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| f | <code>number</code> | The frequency (1, 3) for which to get the FFT size. |
 
 <a name="AudioPlayer+getAnalyzerTimeBytes"></a>
 
