@@ -171,7 +171,7 @@ class AudioPlayer {
    * when performing a Fast Fourier Transform.
    * @param {number} f - The frequency (1, 3) for which to get
    * the FFT size.
-   * returns {number} - an unsigned long
+   * @returns {number} - an unsigned long
    */
   getAnalyzerFFTSize (f) {
     switch (f) {
