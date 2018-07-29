@@ -151,9 +151,8 @@ function main () {
       let x = 0
 
       dataArray.forEach(soundVal => {
-        // v -> (0, 255) / 128.0 -> (0.0, 2.0]
-        let v = dataArray[soundVal] / 128.0
-        let y = v * HEIGHT / 2
+        // (0, 255) / 256.0 -> (0.0, 1.0]
+        let y = (dataArray[soundVal] / 256.0) * HEIGHT
 
         // on first value, go to beginning
         soundVal === 0
