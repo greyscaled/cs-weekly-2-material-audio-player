@@ -4,6 +4,14 @@
 Implements Web Audio API to create a simple wave oscillator visualizer. Original designed classes and architecture heavily inspired by examples on MDN.
 See [MDN example](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Controlling_multiple_parameters_with_ConstantSourceNode)
 
+## Writeup
+
+I wrote a blog article discussing the Web Audio API and explaining
+the program [here](https://medium.com/@vapurrmaid/c-s-weekly-2-material-wave-visualizer-and-the-web-audio-api-5a16c2af4d3b).
+
+This project is an iteration of an effort called Code Something Weekly. The
+article explaining how and why is found [here](https://medium.com/@vapurrmaid/code-something-weekly-how-and-why-44640d279ca1)
+
 ## Demo
 
 [LIVE DEMO](https://vapurrmaid.github.io/cs-weekly-2-material-audio-player/)
