@@ -49,18 +49,10 @@ function main () {
   waveCtrl3El.value = dF
   volumeControl.value = volume
 
-  // unlock on mobile - code written by Pavle Goloskokovic
+  // unlock on mobile - credit Pavle Goloskokovic
   // https://hackernoon.com/unlocking-web-audio-the-smarter-way-8858218c0e09
   if (ctx.state === 'suspended' && 'ontouchstart' in window) {
-    const unlock = _ => {
-      ctx
-        .resume()
-        .then(_ => {
-          document.body.removeEventListener('touchstart', unlock)
-          document.body.removeEventListener('touchend', unlock)
-        })
-    }
-
+    const unlock = _ => (ctx.resume())
     document.body.addEventListener('touchstart', unlock, false)
     document.body.addEventListener('touchend', unlock, false)
   }
