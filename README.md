@@ -1,5 +1,5 @@
 [![forthebadge](https://forthebadge.com/images/badges/fuck-it-ship-it.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) [![Greenkeeper badge](https://badges.greenkeeper.io/vapurrmaid/cs-weekly-2-material-audio-player.svg)](https://greenkeeper.io/)
 # cs-weekly-2-material-audio-player
 Implements Web Audio API to create a simple wave oscillator visualizer. Original designed classes and architecture heavily inspired by examples on MDN.
 See [MDN example](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Controlling_multiple_parameters_with_ConstantSourceNode)
