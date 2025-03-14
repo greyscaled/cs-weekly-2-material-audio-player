@@ -115,6 +115,4 @@ provided array. Must be of type Uint8Array.
 ### audioPlayer.togglePlay() ⇒ <code>undefined</code>
 Starts or stops the audio player.
 
-**Kind**: instance method of [<code>AudioPlayer</code>](#AudioPlayer)  
-
-&copy; 2018 Vapurrmaid
+**Kind**: instance method of [<code>AudioPlayer</code>](#AudioPlayer)
