@@ -14,7 +14,7 @@ article explaining how and why is found [here](https://medium.com/@vapurrmaid/co
 
 ## Demo
 
-[LIVE DEMO](https://vapurrmaid.github.io/cs-weekly-2-material-audio-player/)
+[LIVE DEMO](https://codepen.io/vapurrmaid/pen/KBmdXz)
 
 
 ![screenshot of demo](https://raw.githubusercontent.com/vapurrmaid/cs-weekly-2-material-audio-player/master/assets/demo.PNG)
@@ -73,7 +73,9 @@ Adjusts the value of a frequency.
 <a name="AudioPlayer+getAnalyzerBinCount"></a>
 
 ### audioPlayer.getAnalyzerBinCount(f) ⇒ <code>number</code>
-Returns 1/2 the FFT value for a given source. Represents the number ofdata values for visualization in the frequency domain.Use to assign the length of an unsigned 8-bit array (ie: Uint8Array [binCount])
+Returns 1/2 the FFT value for a given source. Represents the number of
+data values for visualization in the frequency domain.
+Use to assign the length of an unsigned 8-bit array (ie: Uint8Array [binCount])
 
 **Kind**: instance method of [<code>AudioPlayer</code>](#AudioPlayer)  
 
@@ -84,7 +86,9 @@ Returns 1/2 the FFT value for a given source. Represents the number ofdata valu
 <a name="AudioPlayer+getAnalyzerFFTSize"></a>
 
 ### audioPlayer.getAnalyzerFFTSize(f) ⇒ <code>number</code>
-Returns the fftSize which is an unsigned long valueand represents the window size in samples that is usedwhen performing a Fast Fourier Transform.
+Returns the fftSize which is an unsigned long value
+and represents the window size in samples that is used
+when performing a Fast Fourier Transform.
 
 **Kind**: instance method of [<code>AudioPlayer</code>](#AudioPlayer)  
 **Returns**: <code>number</code> - - an unsigned long  
@@ -96,7 +100,8 @@ Returns the fftSize which is an unsigned long valueand represents the window si
 <a name="AudioPlayer+getAnalyzerTimeBytes"></a>
 
 ### audioPlayer.getAnalyzerTimeBytes(f, dataArray) ⇒ <code>undefined</code>
-Copies the current time domain data into theprovided array. Must be of type Uint8Array.
+Copies the current time domain data into the
+provided array. Must be of type Uint8Array.
 
 **Kind**: instance method of [<code>AudioPlayer</code>](#AudioPlayer)  
 
